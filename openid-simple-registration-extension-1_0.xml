@@ -79,7 +79,7 @@ Recordon'>
       "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
       and "OPTIONAL" in this document are to be interpreted as
       described in <xref target="RFC2119"/>.</t -->
-      <t本文書で用いられる各キーワード「MUST (しなければならない)」、「MUST NOT (してはならない)」、「REQUIRED (必須である)」、「SHALL (するものとする)」、「SHALL NOT (しないものとする)」、「SHOULD (すべきである)」、「SHOULD NOT (すべきではない)」、「RECOMMENDED (推奨される)」、「MAY (してもよい)」、「OPTIONAL (任意である)」は <xref target="RFC2119"/> で述べられている通りに解釈されるべきものである。</t>
+      <t>本文書で用いられる各キーワード「MUST (しなければならない)」、「MUST NOT (してはならない)」、「REQUIRED (必須である)」、「SHALL (するものとする)」、「SHALL NOT (しないものとする)」、「SHOULD (すべきである)」、「SHOULD NOT (すべきではない)」、「RECOMMENDED (推奨される)」、「MAY (してもよい)」、「OPTIONAL (任意である)」は <xref target="RFC2119"/> で述べられている通りに解釈されるべきものである。</t>
 
     </section>
 
@@ -99,7 +99,7 @@ Recordon'>
  "Server". This is the OpenID Authentication server
  that a Consumer contacts for cryptographic proof that the
  End User owns the Claimed Identity.</t -->
- <t hangText="アイデンティティプロバイダ (Identity Provider) :""IdP" または "Server" とも呼ばれる。主張識別情報がエンドユーザのものであるという暗号理論に基づいた証明を得るために、コンシューマが問い合せる OpenID 認証サーバを指す。</t>
+ <t hangText="アイデンティティプロバイダ (Identity Provider) :">"IdP" または "Server" とも呼ばれる。主張識別情報がエンドユーザのものであるという暗号理論に基づいた証明を得るために、コンシューマが問い合せる OpenID 認証サーバを指す。</t>
 </list>
       </t>
     </section>
@@ -246,7 +246,7 @@ Recordon'>
       </t>
     </section>
 
-    <section title='Security Considerations'>
+    <!-- section title='Security Considerations' -->
     <section title='セキュリティに関する考慮事項'>
       <t>なし。<!-- None. --></t>
     </section>
