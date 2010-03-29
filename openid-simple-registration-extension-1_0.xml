@@ -68,7 +68,7 @@ Recordon'>
       profile exchange.  It is designed to pass eight commonly
       requested pieces of information when an End User goes to
       register a new account with a web service.</t -->
-      <t>OpenID Simple Registation は、OpenID 認証プロトコル (Authentication protocol) の拡張仕様のひとつであり、非常に軽量なプロファイル交換を実現するものである。ウェブサービスにおいてエンドユーザ (End User) が新たなアカウントを登録しようとする際に、一般に要求されることが多い8種類の情報を受け渡すように設計されている。</t>
+      <t>OpenID Simple Registation は、OpenID 認証プロトコル (Authentication protocol) の拡張仕様のひとつであり、非常に軽量なプロファイル交換を実現するものである。ウェブサービスにおいてエンドユーザ (End User) が新たなアカウントを登録しようとする際に、一般的に要求されることが多い8種類の情報を受け渡すように設計されている。</t>
     </abstract>
   </front>
 
@@ -105,11 +105,11 @@ Recordon'>
     </section>
 
     <!-- section title='Request Format' -->
-    <section title='要求書式 (Request Format) '>
+    <section title='要求フォーマット'>
       <!-- t>The request parameters detailed here SHOULD be sent with
       OpenID Authentication checkid_immediate or checkid_setup
       requests.</t -->
-      <t>ここに詳述する要求パラメータは、OpenID 認証の checkid_immediate または checkid_setup 要求とともに送るべきである (SHOULD)。</t>
+      <t>ここに詳述する要求パラメータは、OpenID 認証の checkid_immediate 要求または checkid_setup 要求とともに送るべきである (SHOULD)。</t>
 
       <!-- t>All of the following request fields are OPTIONAL, though
       at least one of "openid.sreg.required" or "openid.sreg.optional"
@@ -125,7 +125,7 @@ Recordon'>
  are those that are specified in the <xref
  target='response_format'>Response Format</xref>, with the
  "openid.sreg." prefix removed.</t -->
- <t hangText='openid.sreg.required:'>フィールド名のコンマ区切りのリスト。応答に存在していない場合、コンシューマは、エンドユーザとの対話を行なわずに登録を完了することができない。フィールド名は、<xref target='response_format'>応答書式 (Response Format)</xref> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
+ <t hangText='openid.sreg.required:'>フィールド名のコンマ区切りのリスト。このリストが応答に含まれていない場合、コンシューマは、エンドユーザとの対話を行なわずに登録を完了することができない。フィールド名は、<xref target='response_format'>応答フォーマット</xref> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
  </t>
 
  <!-- t hangText='openid.sreg.optional:'>Comma-separated list of
@@ -134,7 +134,7 @@ Recordon'>
  completing. The field names are those that are specified in
  the <xref target='response_format'>Response Format</xref>,
  with the "openid.sreg." prefix removed.</t -->
- <t hangText='openid.sreg.optional:'>フィールド名のコンマ区切りのリスト。コンシューマによって使用され、存在していなくても、登録完了の妨げにはならない。フィールド名は、<xref target='response_format'>応答書式 (Response Format)</xref> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
+ <t hangText='openid.sreg.optional:'>フィールド名のコンマ区切りのリストで、コンシューマによって使用される。しかし、リストが存在していなくても、登録完了の妨げにはならない。フィールド名は、<xref target='response_format'>応答フォーマット</xref> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
  </t>
 
  <!-- t hangText='openid.sreg.policy_url:'> A URL
@@ -148,7 +148,7 @@ Recordon'>
     </section>
 
     <!-- section title='Response Format' anchor='response_format' -->
-    <section title='応答書式 (Response Format) ' anchor='response_format'>
+    <section title='応答フォーマット' anchor='response_format'>
       <!-- t>The fields below SHOULD be included in the Identity Providers's
       response when "openid.mode" is "id_res".</t -->
       <t>"openid.mode" が "id_res" のとき、アイデンティティプロバイダの応答は、下記に示すフィールドを含むべきである (SHOULD)。</t>
@@ -166,7 +166,7 @@ Recordon'>
 
       <!-- t>The Consumer MUST be prepared to handle a response which
       lacks fields marked as required or optional.</t -->
-      <t>コンシューマは、必須または任意と指定されたフィールドが存在していない応答を処理できるようにしておかなければならない (MUST)。</t>
+      <t>コンシューマは、必須または任意と指定されたフィールドが含まれた応答を処理できるようにしておかなければならない (MUST)。</t>
 
       <!-- t>The behavior in the case of missing required fields or extra,
       unrequested fields is up to the Consumer. The Consumer
