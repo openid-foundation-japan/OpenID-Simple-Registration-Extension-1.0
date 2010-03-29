@@ -1,13 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en"><head>
-<title>OpenID Simple Registration Extension 1.0</title>
-<meta http-equiv="Expires" content="Sun, 28 Mar 2010 17:51:55 +0000">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description" content="OpenID Simple Registration Extension 
-1.0">
-<meta name="generator" content="xml2rfc v1.34 
-(http://xml.resource.org/)">
-<style type="text/css"><!--
+<html lang="en"><head><title>OpenID Simple Registration Extension 1.0</title>
+<meta http-equiv="Expires" content="Mon, 29 Mar 2010 14:10:00 +0000">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="OpenID Simple Registration Extension 1.0">
+<meta name="generator" content="xml2rfc v1.34 (http://xml.resource.org/)">
+<style type='text/css'><!--
         body {
                 font-family: verdana, charcoal, helvetica, arial, sans-serif;
                 font-size: small; color: #000; background-color: #FFF;
@@ -141,63 +138,51 @@
                 color: #CCC; background-color: #CCC;
         }
 --></style>
-</head><body>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
-<table summary="layout" border="0" cellpadding="0" cellspacing="0" 
-width="66%"><tbody><tr><td><table summary="layout" border="0" 
-cellpadding="2" cellspacing="1" width="100%">
-<tbody><tr><td class="header"> </td><td class="header">J. Hoyt</td></tr>
+</head>
+<body>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
+<tr><td class="header"> </td><td class="header">J. Hoyt</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Daugherty</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JanRain</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">D. Recordon</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">June 2006</td></tr>
-</tbody></table></td></tr></tbody></table>
-<h1><br>OpenID Simple Registration Extension 1.0</h1>
+</table></td></tr></table>
+<h1><br />OpenID Simple Registration Extension 1.0</h1>
 
 <h3>Abstract</h3>
 
-<p>OpenID Simple Registation は、 OpenID 認証プロトコル (Authentication protocol)
- の拡張仕様のひとつであり、非常に軽量なプロファイル交換を実現するものである。ウェブサービスにおいてエンドユーザ (End User) 
-が新たなアカウントを登録しようとする際に、一般に要求されることが多い8種類の情報を受け渡すように設計されている。
-</p><a name="toc"></a><br><hr>
+<p>OpenID Simple Registation は、OpenID 認証プロトコル (Authentication protocol) の拡張仕様のひとつであり、非常に軽量なプロファイル交換を実現するものである。ウェブサービスにおいてエンドユーザ (End User) が新たなアカウントを登録しようとする際に、一般に要求されることが多い8種類の情報を受け渡すように設計されている。
+</p><a name="toc"></a><br /><hr />
 <h3>Table of Contents</h3>
 <p class="toc">
 <a href="#anchor1">1.</a>&nbsp;
-要求記法および規則<br>
+要求記法および規則<br />
 <a href="#anchor2">2.</a>&nbsp;
-用語<br>
+用語<br />
 <a href="#anchor3">3.</a>&nbsp;
-要求書式 (Request Format) <br>
+要求書式 (Request Format) <br />
 <a href="#response_format">4.</a>&nbsp;
-応答書式 (Response Format) <br>
+応答書式 (Response Format) <br />
 <a href="#anchor4">5.</a>&nbsp;
-セキュリティに関する考慮事項<br>
+セキュリティに関する考慮事項<br />
 <a href="#rfc.references1">6.</a>&nbsp;
-参考文献<br>
-<a href="#rfc.authors">§</a>&nbsp;
-Authors' Addresses<br>
+参考文献<br />
+<a href="#rfc.authors">&#167;</a>&nbsp;
+Authors' Addresses<br />
 </p>
-<br clear="all">
+<br clear="all" />
 
-<a name="anchor1"></a><br><hr>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="anchor1"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.1"></a><h3>1.&nbsp;
 要求記法および規則</h3>
 
-<p>本文書で用いられる各キーワード「MUST (しなければならない)」、「MUST NOT (してはならない)」、「REQUIRED 
-(必須である)」、「SHALL (するものとする)」、「SHALL NOT (しないものとする)」、「SHOULD 
-(すべきである)」、「SHOULD NOT (すべきではない)」、「RECOMMENDED (推奨される)」、「MAY 
-(してもよい)」、「OPTIONAL (任意である)」は <a class="info" href="#RFC2119">[RFC2119]<span>
- (</span><span class="info">Bradner, B., “Key words for use in RFCs to 
-Indicate Requirement Levels,” .</span><span>)</span></a> 
-で述べられている通りに解釈されるべきものである。
+<p>本文書で用いられる各キーワード「MUST (しなければならない)」、「MUST NOT (してはならない)」、「REQUIRED (必須である)」、「SHALL (するものとする)」、「SHALL NOT (しないものとする)」、「SHOULD (すべきである)」、「SHOULD NOT (すべきではない)」、「RECOMMENDED (推奨される)」、「MAY (してもよい)」、「OPTIONAL (任意である)」は <a class='info' href='#RFC2119'>[RFC2119]<span> (</span><span class='info'>Bradner, B., &ldquo;Key words for use in RFCs to Indicate Requirement Levels,&rdquo; .</span><span>)</span></a> で述べられている通りに解釈されるべきものである。
 </p>
-<a name="anchor2"></a><br><hr>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="anchor2"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.2"></a><h3>2.&nbsp;
 用語</h3>
 
@@ -211,86 +196,55 @@ cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a>
 <dd>主張識別情報 (Claimed Identity) がエンドユーザのものであるという証明を必要とするウェブサービス。
 </dd>
 <dt>アイデンティティプロバイダ (Identity Provider) :</dt>
-<dd>"IdP" または "Server" 
-とも呼ばれる。主張識別情報がエンドユーザのものであるという暗号理論に基づいた証明を得るために、コンシューマが問い合せる OpenID 
-認証サーバを指す。
+<dd>"IdP" または "Server" とも呼ばれる。主張識別情報がエンドユーザのものであるという暗号理論に基づいた証明を得るために、コンシューマが問い合せる OpenID 認証サーバを指す。
 </dd>
 </dl></blockquote><p>
       
 </p>
-<a name="anchor3"></a><br><hr>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="anchor3"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.3"></a><h3>3.&nbsp;
 要求書式 (Request Format) </h3>
 
-<p>The request parameters detailed here SHOULD be sent with
-      OpenID Authentication checkid_immediate or checkid_setup
-      requests.
+<p>ここに詳述する要求パラメータは、OpenID 認証の checkid_immediate または checkid_setup 要求とともに送るべきである (SHOULD)。
 </p>
-<p>The request parameters detailed here SHOULD be sent with
-      OpenID Authentication checkid_immediate or checkid_setup
-      requests.
-</p>
-<p>All of the following request fields are OPTIONAL, though
-      at least one of "openid.sreg.required" or "openid.sreg.optional"
-      MUST be specified in the request.
-</p>
-<p>All of the following request fields are OPTIONAL, though
-      at least one of "openid.sreg.required" or "openid.sreg.optional"
-      MUST be specified in the request.
+<p>以下の要求フィールドは全て任意である (OPTIONAL) が、要求の中で、"openid.sreg.required" または "openid.sreg.optional" の少なくとも片方を指定しなければならない (MUST)。
 </p>
 <p>
 </p>
 <blockquote class="text"><dl>
 <dt>openid.sreg.required:</dt>
-<dd>フィールド名のコンマ区切りのリスト。応答に存在していない場合、コンシューマは、エンドユーザとの対話を行なわずに登録を完了することができな
-い。フィールド名は、 <a class="info" href="#response_format">応答書式 (Response 
-Format)<span> (</span><span class="info">応答書式 (Response Format) </span><span>)</span></a>
- の項において指定するフィールド名から、 "openid.sreg." プリフィックスを除いたものとする。
+<dd>フィールド名のコンマ区切りのリスト。応答に存在していない場合、コンシューマは、エンドユーザとの対話を行なわずに登録を完了することができない。フィールド名は、<a class='info' href='#response_format'>応答書式 (Response Format)<span> (</span><span class='info'>応答書式 (Response Format) </span><span>)</span></a> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
  
 </dd>
 <dt>openid.sreg.optional:</dt>
-<dd>フィールド名のコンマ区切りのリスト。コンシューマによって使用され、存在していなくても、登録完了の妨げにはならない。フィールド名は、<a 
-class="info" href="#response_format">応答書式 (Response Format)<span> (</span><span
- class="info">応答書式 (Response Format) </span><span>)</span></a>の項において指定する
-フィールド名から、 "openid.sreg." プリフィックスを除いたものとする。
+<dd>フィールド名のコンマ区切りのリスト。コンシューマによって使用され、存在していなくても、登録完了の妨げにはならない。フィールド名は、<a class='info' href='#response_format'>応答書式 (Response Format)<span> (</span><span class='info'>応答書式 (Response Format) </span><span>)</span></a> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
  
 </dd>
 <dt>openid.sreg.policy_url:</dt>
-<dd>プロファイルデータがどのように使用されるのかをエンドユーザが知りたい場合に、どこを見れば良いのかがわかるように、コンシューマからエンド
-ユーザに提示される URL 。アイデンティティプロバイダは、この URL が指定された場合、エンドユーザに対してこのURLを表示すべきである 
-(SHOULD) 。
+<dd>プロファイルデータがどのように使用されるのかをエンドユーザが知りたい場合に、どこを見れば良いのかがわかるように、コンシューマからエンドユーザに提示される URL 。アイデンティティプロバイダは、この URL が指定された場合、エンドユーザに対してこのURLを表示すべきである (SHOULD)。
 </dd>
 </dl></blockquote><p>
       
 </p>
-<a name="response_format"></a><br><hr>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="response_format"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4"></a><h3>4.&nbsp;
 応答書式 (Response Format) </h3>
 
-<p>"openid.mode" が "id_res" のとき、アイデンティティプロバイダの応答は、下記に示すフィールドを含むべきである 
-(SHOULD) 。
+<p>"openid.mode" が "id_res" のとき、アイデンティティプロバイダの応答は、下記に示すフィールドを含むべきである (SHOULD)。
 </p>
-<p>応答の "openid.signed" のフィールド・リストには、送り返された登録フィールド名が含まれていなければならない (MUST) 
-。そのフィールド名は、（例えば、 sreg.nicknameなど） openid. プリフィックスを除いたものとする。 
-"openid.sig"フィールドでは、 OpenID Authentication 仕様書に指定される OpenIDデータに加え、sreg. 
-フィールドをも対象とした署名を、提供しなければならない (MUST)。
+<p>応答の "openid.signed" のフィールド・リストには、送り返された登録フィールド名が含まれていなければならない (MUST)。そのフィールド名は、（例えば、sreg.nickname など） openid. プリフィックスを除いたものとする。"openid.sig" フィールドでは、OpenID Authentication 仕様書に指定される OpenID データに加え、sreg. フィールドを署名対象としなければならない (MUST)。
 </p>
-<p>コンシューマが署名検証に失敗した場合、アイデンティティプロバイダから得られた登録データを、一切使用するべきではない (SHOULD) 。
+<p>コンシューマが署名検証に失敗した場合、アイデンティティプロバイダから得られた登録データを、一切使用するべきではない (SHOULD)。
 </p>
-<p>コンシューマは、必須または任意と指定されたフィールドが存在していない応答を処理できるようにしておかなければならない (MUST) 。
+<p>コンシューマは、必須または任意と指定されたフィールドが存在していない応答を処理できるようにしておかなければならない (MUST)。
 </p>
-<p>要求したフィールドが存在していない場合、もしくは、要求していないフィールドが余分に存在している場合の対処方法については、コンシューマが決定
-するものとする。こうした状況について、コンシューマは、エンドユーザがデータを手入力した場合と同様に処理すべきである (SHOULD) 。
+<p>要求したフィールドが存在していない場合、もしくは、要求していないフィールドが余分に存在している場合の対処方法については、コンシューマが決定するものとする。こうした状況について、コンシューマは、エンドユーザがデータを手入力した場合と同様に処理すべきである (SHOULD)。
 </p>
-<p>応答の中で、同一のフィールドを二度以上記述してはならない (MUST NOT) 
-。また、応答に含まれるフィールドは全て、本仕様書で規定されるフィールドの中から選択しなければならない (MUST) 。
+<p>応答の中で、同一のフィールドを二度以上記述してはならない (MUST NOT)。また、応答に含まれるフィールドは全て、本仕様書で規定されるフィールドの中から選択しなければならない (MUST)。
 </p>
-<p>アイデンティティプロバイダは、照会に対する応答として、下記フィールドの一部を任意の組み合わせで送り返してもよい (MAY) 。 
-具体的には、下記の通りである: 
+<p>アイデンティティプロバイダは、照会に対する応答として、下記フィールドの一部を任意の組み合わせで送り返してもよい (MAY)。具体的には、下記の通りである:
 </p>
 <p>
 </p>
@@ -299,77 +253,62 @@ cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a>
 <dd>エンドユーザがニックネームとして使用したい任意の UTF-8 文字列。
 </dd>
 <dt>openid.sreg.email:</dt>
-<dd>エンドユーザのE メールアドレス。 <a class="info" href="#RFC2822">[RFC2822]<span> (</span><span
- class="info">Resnick, P., “Internet Message Format,” .</span><span>)</span></a>
- の第 3.4.1 節で指定されている通りとする。
+<dd>エンドユーザのメールアドレス。<a class='info' href='#RFC2822'>[RFC2822]<span> (</span><span class='info'>Resnick, P., &ldquo;Internet Message Format,&rdquo; .</span><span>)</span></a> の第3.4.1節で指定されている通りとする。
 </dd>
 <dt>openid.sreg.fullname:</dt>
 <dd>エンドユーザのフルネームをフリーテキストで表記した UTF-8 文字列。
 </dd>
 <dt>openid.sreg.dob:</dt>
-<dd>YYYY-MM-DD 
-形式で表記したエンドユーザの生年月日。指定した桁数より小さい値を表記する場合は、必ずゼロを詰める。この値の長さは、常に 10 でなければならない
- (MUST) 。この値の特定の一部をエンドユーザが公開したくない場合、その部分は全てゼロと設定しなければならない (MUST) 。
- <br>
+<dd>YYYY-MM-DD 形式で表記したエンドユーザの生年月日。指定した桁数より小さい値を表記する場合は、必ずゼロを詰める。この値の長さは、常に 10 でなければならない (MUST)。この値の特定の一部をエンドユーザが公開したくない場合、その部分は全てゼロと設定しなければならない (MUST)。
+ <br />
 
-例えば、エンドユーザが生年月日のうちの年を 1980 年と指定し、月日を公開したくない場合、送り返す値は、 "1980-00-00" 
-とするものとする (SHALL) 。
+例えば、エンドユーザが生年月日のうちの年を1980年と指定し、月日を公開したくない場合、送り返す値は、"1980-00-00" とするものとする (SHALL)。
 </dd>
 <dt>openid.sreg.gender:</dt>
-<dd>エンドユーザの性別。男性の場合は "M" 、女性の場合は "F" とする。
+<dd>エンドユーザの性別。男性の場合は "M"、女性の場合は "F" とする。
 </dd>
 <dt>openid.sreg.postcode:</dt>
-<dd>フリーテキストで表記した UTF-8 文字列。エンドユーザの居住国の郵便番号体系と合致しているべきである (SHOULD) 。
+<dd>フリーテキストで表記した UTF-8 文字列。エンドユーザの居住国の郵便番号体系と合致しているべきである (SHOULD)。
 </dd>
 <dt>openid.sreg.country:</dt>
-<dd>The
- エンドユーザの居住国。 <a 
-href="http://www.iso.org/iso/en/prods-services/iso3166ma/index.html">ISO3166</a>
- で指定されている通りとする。
+<dd>エンドユーザの居住国。<a href='http://www.iso.org/iso/en/prods-services/iso3166ma/index.html'>ISO3166</a> で指定されている通りとする。
 </dd>
 <dt>openid.sreg.language:</dt>
-<dd>エンドユーザが選択した言語。 <a href="http://www.w3.org/WAI/ER/IG/ert/iso639.htm">ISO639</a>
- で指定されている通りとする。
+<dd>エンドユーザが選択した言語。<a href='http://www.w3.org/WAI/ER/IG/ert/iso639.htm'>ISO639</a> で指定されている通りとする。
 </dd>
 <dt>openid.sreg.timezone:</dt>
-<dd><a href="http://www.twinsun.com/tz/tz-link.htm">タイムゾーンデータベース</a>  
-から得られる ASCII 文字列。
- <br>
+<dd><a href='http://www.twinsun.com/tz/tz-link.htm'>タイムゾーンデータベース</a>から得られる ASCII 文字列。
+ <br />
 
-例えば、 "Europe/Paris" あるいは "America/Los_Angeles" 。
+例えば、"Europe/Paris" あるいは "America/Los_Angeles"。
 </dd>
 </dl></blockquote><p>
       
 </p>
-<a name="anchor4"></a><br><hr>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="anchor4"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5"></a><h3>5.&nbsp;
 セキュリティに関する考慮事項</h3>
 
 <p>なし。
 </p>
-<a name="rfc.references1"></a><br><hr>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="rfc.references1"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <h3>6.&nbsp;参考文献</h3>
-<table border="0" width="99%">
-<tbody><tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
-<td class="author-text">Bradner, B., “Key words for use in RFCs to 
-Indicate Requirement Levels.”</td></tr>
+<table width="99%" border="0">
+<tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
+<td class="author-text">Bradner, B., &ldquo;Key words for use in RFCs to Indicate Requirement Levels.&rdquo;</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC2822">[RFC2822]</a></td>
-<td class="author-text">Resnick, P., “Internet Message Format.”</td></tr>
+<td class="author-text">Resnick, P., &ldquo;Internet Message Format.&rdquo;</td></tr>
 <tr><td class="author-text" valign="top"><a name="openid_authentication">[openid_authentication]</a></td>
-<td class="author-text">Recordon, D. and B. Fitzpatrick, “OpenID 
-Authentication 1.1.”</td></tr>
-</tbody></table>
+<td class="author-text">Recordon, D. and B. Fitzpatrick, &ldquo;OpenID Authentication 1.1.&rdquo;</td></tr>
+</table>
 
-<a name="rfc.authors"></a><br><hr>
-<table summary="layout" class="TOCbug" align="right" cellpadding="0" 
-cellspacing="2"><tbody><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="rfc.authors"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <h3>Authors' Addresses</h3>
-<table border="0" cellpadding="0" cellspacing="0" width="99%">
-<tbody><tr><td class="author-text">&nbsp;</td>
+<table width="99%" border="0" cellpadding="0" cellspacing="0">
+<tr><td class="author-text">&nbsp;</td>
 <td class="author-text">Josh Hoyt</td></tr>
 <tr><td class="author-text">&nbsp;</td>
 <td class="author-text">JanRain, Inc.</td></tr>
@@ -412,5 +351,6 @@ Recordon</td></tr>
 <td class="author-text">USA</td></tr>
 <tr><td class="author" align="right">Email:&nbsp;</td>
 <td class="author-text"><a href="mailto:drecordon@verisign.com">drecordon@verisign.com</a></td></tr>
-</tbody></table>
+</table>
 </body></html>
+
