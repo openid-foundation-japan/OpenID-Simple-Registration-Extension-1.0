@@ -68,7 +68,7 @@ Recordon'>
       profile exchange.  It is designed to pass eight commonly
       requested pieces of information when an End User goes to
       register a new account with a web service.</t -->
-      <t>OpenID Simple Registation は、 OpenID 認証プロトコル (Authentication protocol) の拡張仕様のひとつであり、非常に軽量なプロファイル交換を実現するものである。ウェブサービスにおいてエンドユーザ (End User) が新たなアカウントを登録しようとする際に、一般に要求されることが多い8種類の情報を受け渡すように設計されている。</t>
+      <t>OpenID Simple Registation は、OpenID 認証プロトコル (Authentication protocol) の拡張仕様のひとつであり、非常に軽量なプロファイル交換を実現するものである。ウェブサービスにおいてエンドユーザ (End User) が新たなアカウントを登録しようとする際に、一般に要求されることが多い8種類の情報を受け渡すように設計されている。</t>
     </abstract>
   </front>
 
@@ -106,19 +106,15 @@ Recordon'>
 
     <!-- section title='Request Format' -->
     <section title='要求書式 (Request Format) '>
-      <t>The request parameters detailed here SHOULD be sent with
+      <!-- t>The request parameters detailed here SHOULD be sent with
       OpenID Authentication checkid_immediate or checkid_setup
-      requests.</t>
-      <t>The request parameters detailed here SHOULD be sent with
-      OpenID Authentication checkid_immediate or checkid_setup
-      requests.</t>
+      requests.</t -->
+      <t>ここに詳述する要求パラメータは、OpenID 認証の checkid_immediate または checkid_setup 要求とともに送るべきである (SHOULD)。</t>
 
-      <t>All of the following request fields are OPTIONAL, though
+      <!-- t>All of the following request fields are OPTIONAL, though
       at least one of "openid.sreg.required" or "openid.sreg.optional"
-      MUST be specified in the request.</t>
-      <t>All of the following request fields are OPTIONAL, though
-      at least one of "openid.sreg.required" or "openid.sreg.optional"
-      MUST be specified in the request.</t>
+      MUST be specified in the request.</t -->
+      <t>以下の要求フィールドは全て任意である (OPTIONAL) が、要求の中で、"openid.sreg.required" または "openid.sreg.optional" の少なくとも片方を指定しなければならない (MUST)。</t>
 
       <t>
 <list style='hanging'>
@@ -129,8 +125,7 @@ Recordon'>
  are those that are specified in the <xref
  target='response_format'>Response Format</xref>, with the
  "openid.sreg." prefix removed.</t -->
- <t hangText='openid.sreg.required:'>フィールド名のコンマ区切りのリスト。応答に存在していない場合、コンシューマは、エンドユーザとの対話を行なわずに登録を完了することができない。フィールド名は、 <xref
- target='response_format'>応答書式 (Response Format) </xref> の項において指定するフィールド名から、 "openid.sreg." プリフィックスを除いたものとする。
+ <t hangText='openid.sreg.required:'>フィールド名のコンマ区切りのリスト。応答に存在していない場合、コンシューマは、エンドユーザとの対話を行なわずに登録を完了することができない。フィールド名は、<xref target='response_format'>応答書式 (Response Format)</xref> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
  </t>
 
  <!-- t hangText='openid.sreg.optional:'>Comma-separated list of
@@ -139,7 +134,7 @@ Recordon'>
  completing. The field names are those that are specified in
  the <xref target='response_format'>Response Format</xref>,
  with the "openid.sreg." prefix removed.</t -->
- <t hangText='openid.sreg.optional:'>フィールド名のコンマ区切りのリスト。コンシューマによって使用され、存在していなくても、登録完了の妨げにはならない。フィールド名は、<xref target='response_format'>応答書式 (Response Format) </xref>の項において指定するフィールド名から、 "openid.sreg." プリフィックスを除いたものとする。
+ <t hangText='openid.sreg.optional:'>フィールド名のコンマ区切りのリスト。コンシューマによって使用され、存在していなくても、登録完了の妨げにはならない。フィールド名は、<xref target='response_format'>応答書式 (Response Format)</xref> の項において指定するフィールド名から、"openid.sreg." プリフィックスを除いたものとする。
  </t>
 
  <!-- t hangText='openid.sreg.policy_url:'> A URL
@@ -147,7 +142,7 @@ Recordon'>
  place to read about the how the profile data will be
  used. The Identity Provider SHOULD display this URL to the End
  User if it is given.</t -->
- <t hangText='openid.sreg.policy_url:'>プロファイルデータがどのように使用されるのかをエンドユーザが知りたい場合に、どこを見れば良いのかがわかるように、コンシューマからエンドユーザに提示される URL 。アイデンティティプロバイダは、この URL が指定された場合、エンドユーザに対してこのURLを表示すべきである (SHOULD) 。</t>
+ <t hangText='openid.sreg.policy_url:'>プロファイルデータがどのように使用されるのかをエンドユーザが知りたい場合に、どこを見れば良いのかがわかるように、コンシューマからエンドユーザに提示される URL 。アイデンティティプロバイダは、この URL が指定された場合、エンドユーザに対してこのURLを表示すべきである (SHOULD)。</t>
 </list>
       </t>
     </section>
@@ -156,37 +151,37 @@ Recordon'>
     <section title='応答書式 (Response Format) ' anchor='response_format'>
       <!-- t>The fields below SHOULD be included in the Identity Providers's
       response when "openid.mode" is "id_res".</t -->
-      <t>"openid.mode" が "id_res" のとき、アイデンティティプロバイダの応答は、下記に示すフィールドを含むべきである (SHOULD) 。</t>
+      <t>"openid.mode" が "id_res" のとき、アイデンティティプロバイダの応答は、下記に示すフィールドを含むべきである (SHOULD)。</t>
 
       <!-- t>The response's "openid.signed" field list MUST include the
       returned registration field names, prefixed without the
       openid. prefix (e.g., sreg.nickname). The "openid.sig" field
       MUST provide a signature for the sreg. fields in addition to
       the OpenID data according to the OpenID Authentication specification.</t -->
-      <t>応答の "openid.signed" のフィールド・リストには、送り返された登録フィールド名が含まれていなければならない (MUST) 。そのフィールド名は、（例えば、 sreg.nicknameなど） openid. プリフィックスを除いたものとする。 "openid.sig"フィールドでは、 OpenID Authentication 仕様書に指定される OpenIDデータに加え、sreg. フィールドをも対象とした署名を、提供しなければならない (MUST)。</t>
+      <t>応答の "openid.signed" のフィールド・リストには、送り返された登録フィールド名が含まれていなければならない (MUST)。そのフィールド名は、（例えば、sreg.nickname など） openid. プリフィックスを除いたものとする。"openid.sig" フィールドでは、OpenID Authentication 仕様書に指定される OpenID データに加え、sreg. フィールドを署名対象としなければならない (MUST)。</t>
 
       <!-- t>If the Consumer's signature verification fails, then
       no registration data from the Identity Provider SHOULD be used.</t -->
-      <t>コンシューマが署名検証に失敗した場合、アイデンティティプロバイダから得られた登録データを、一切使用するべきではない (SHOULD) 。</t>
+      <t>コンシューマが署名検証に失敗した場合、アイデンティティプロバイダから得られた登録データを、一切使用するべきではない (SHOULD)。</t>
 
       <!-- t>The Consumer MUST be prepared to handle a response which
       lacks fields marked as required or optional.</t -->
-      <t>コンシューマは、必須または任意と指定されたフィールドが存在していない応答を処理できるようにしておかなければならない (MUST) 。</t>
+      <t>コンシューマは、必須または任意と指定されたフィールドが存在していない応答を処理できるようにしておかなければならない (MUST)。</t>
 
       <!-- t>The behavior in the case of missing required fields or extra,
       unrequested fields is up to the Consumer. The Consumer
       SHOULD treat this situation the same as it would if the End User
       entered the data manually.</t -->
-      <t>要求したフィールドが存在していない場合、もしくは、要求していないフィールドが余分に存在している場合の対処方法については、コンシューマが決定するものとする。こうした状況について、コンシューマは、エンドユーザがデータを手入力した場合と同様に処理すべきである (SHOULD) 。</t>
+      <t>要求したフィールドが存在していない場合、もしくは、要求していないフィールドが余分に存在している場合の対処方法については、コンシューマが決定するものとする。こうした状況について、コンシューマは、エンドユーザがデータを手入力した場合と同様に処理すべきである (SHOULD)。</t>
 
       <!-- t>A single field MUST NOT be repeated in the response, and all
       included fields MUST be taken from the set of fields defined in
       this specification.</t -->
-      <t>応答の中で、同一のフィールドを二度以上記述してはならない (MUST NOT) 。また、応答に含まれるフィールドは全て、本仕様書で規定されるフィールドの中から選択しなければならない (MUST) 。</t>
+      <t>応答の中で、同一のフィールドを二度以上記述してはならない (MUST NOT)。また、応答に含まれるフィールドは全て、本仕様書で規定されるフィールドの中から選択しなければならない (MUST)。</t>
 
       <!-- t>An Identity Provider MAY return any subset of the following
       fields in response to the query. In particular:</t -->
-      <t>アイデンティティプロバイダは、照会に対する応答として、下記フィールドの一部を任意の組み合わせで送り返してもよい (MAY) 。 具体的には、下記の通りである: </t>
+      <t>アイデンティティプロバイダは、照会に対する応答として、下記フィールドの一部を任意の組み合わせで送り返してもよい (MAY)。具体的には、下記の通りである:</t>
 
       <t>
 <list style='hanging'>
@@ -196,7 +191,7 @@ Recordon'>
 
  <!-- t hangText='openid.sreg.email:'>The email address of the
  End User as specified in section 3.4.1 of <xref target='RFC2822' />.</t -->
- <t hangText='openid.sreg.email:'>エンドユーザのE メールアドレス。 <xref target='RFC2822' /> の第 3.4.1 節で指定されている通りとする。</t>
+ <t hangText='openid.sreg.email:'>エンドユーザのメールアドレス。<xref target='RFC2822' /> の第3.4.1節で指定されている通りとする。</t>
 
  <!-- t hangText='openid.sreg.fullname:'>UTF-8 string free text
  representation of the End User's full name.</t -->
@@ -212,36 +207,35 @@ Recordon'>
  For instance, if a End User wants to specify that his
  date of birth is in 1980, but not the month or day, the value
  returned SHALL be "1980-00-00".</t -->
- <t hangText='openid.sreg.dob:'>YYYY-MM-DD 形式で表記したエンドユーザの生年月日。指定した桁数より小さい値を表記する場合は、必ずゼロを詰める。この値の長さは、常に 10 でなければならない (MUST) 。この値の特定の一部をエンドユーザが公開したくない場合、その部分は全てゼロと設定しなければならない (MUST) 。
+ <t hangText='openid.sreg.dob:'>YYYY-MM-DD 形式で表記したエンドユーザの生年月日。指定した桁数より小さい値を表記する場合は、必ずゼロを詰める。この値の長さは、常に 10 でなければならない (MUST)。この値の特定の一部をエンドユーザが公開したくない場合、その部分は全てゼロと設定しなければならない (MUST)。
  <vspace blankLines='1' />
-例えば、エンドユーザが生年月日のうちの年を 1980 年と指定し、月日を公開したくない場合、送り返す値は、 "1980-00-00" とするものとする (SHALL) 。</t>
+例えば、エンドユーザが生年月日のうちの年を1980年と指定し、月日を公開したくない場合、送り返す値は、"1980-00-00" とするものとする (SHALL)。</t>
 
  <!-- t hangText='openid.sreg.gender:'>The End User's gender,
  "M" for male, "F" for female.</t -->
- <t hangText='openid.sreg.gender:'>エンドユーザの性別。男性の場合は "M" 、女性の場合は "F" とする。</t>
+ <t hangText='openid.sreg.gender:'>エンドユーザの性別。男性の場合は "M"、女性の場合は "F" とする。</t>
 
  <!-- t hangText='openid.sreg.postcode:'>UTF-8 string free text that
  SHOULD conform to the End User's country's postal system.</t -->
- <t hangText='openid.sreg.postcode:'>フリーテキストで表記した UTF-8 文字列。エンドユーザの居住国の郵便番号体系と合致しているべきである (SHOULD) 。</t>
+ <t hangText='openid.sreg.postcode:'>フリーテキストで表記した UTF-8 文字列。エンドユーザの居住国の郵便番号体系と合致しているべきである (SHOULD)。</t>
 
  <!-- t hangText='openid.sreg.country:'>The
  End User's country of residence as specified by <eref target='http://www.iso.org/iso/en/prods-services/iso3166ma/index.html'>ISO3166</eref>.</t -->
- <t hangText='openid.sreg.country:'>The
- エンドユーザの居住国。 <eref target='http://www.iso.org/iso/en/prods-services/iso3166ma/index.html'>ISO3166</eref> で指定されている通りとする。</t>
+ <t hangText='openid.sreg.country:'>エンドユーザの居住国。<eref target='http://www.iso.org/iso/en/prods-services/iso3166ma/index.html'>ISO3166</eref> で指定されている通りとする。</t>
 
  <!-- t hangText='openid.sreg.language:'>End User's preferred
  language as specified by <eref
  target='http://www.w3.org/WAI/ER/IG/ert/iso639.htm'>ISO639</eref>.</t -->
- <t hangText='openid.sreg.language:'>エンドユーザが選択した言語。 <eref target='http://www.w3.org/WAI/ER/IG/ert/iso639.htm'>ISO639</eref> で指定されている通りとする。</t>
+ <t hangText='openid.sreg.language:'>エンドユーザが選択した言語。<eref target='http://www.w3.org/WAI/ER/IG/ert/iso639.htm'>ISO639</eref> で指定されている通りとする。</t>
 
  <!-- t hangText='openid.sreg.timezone:'>ASCII string from <eref
  target='http://www.twinsun.com/tz/tz-link.htm'>TimeZone
  database</eref>
  <vspace blankLines='1' />
  For example, "Europe/Paris" or "America/Los_Angeles".</t -->
- <t hangText='openid.sreg.timezone:'><eref target='http://www.twinsun.com/tz/tz-link.htm'>タイムゾーンデータベース</eref>  から得られる ASCII 文字列。
+ <t hangText='openid.sreg.timezone:'><eref target='http://www.twinsun.com/tz/tz-link.htm'>タイムゾーンデータベース</eref>から得られる ASCII 文字列。
  <vspace blankLines='1' />
-例えば、 "Europe/Paris" あるいは "America/Los_Angeles" 。</t>
+例えば、"Europe/Paris" あるいは "America/Los_Angeles"。</t>
 </list>
       </t>
     </section>
